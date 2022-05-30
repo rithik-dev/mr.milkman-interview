@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:milkman_interview/app_config.dart';
 import 'package:milkman_interview/models/restaurant.dart';
 import 'package:milkman_interview/widgets/restaurant_card.dart';
 
@@ -40,6 +41,7 @@ class _RecommendedForYou extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            Text(AppConfig.of(context).appDisplayName),
             const Text(
               'Recommended for you',
               style: TextStyle(

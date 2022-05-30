@@ -180,7 +180,7 @@ class RestaurantCardVertical extends StatelessWidget {
       height: 270,
       customMargin: const EdgeInsets.only(bottom: 15),
       width: 175,
-      elevation: 15,
+      elevation: 10,
       padding: 0,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,

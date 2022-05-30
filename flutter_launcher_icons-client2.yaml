@@ -1,0 +1,7 @@
+# flutter pub run flutter_launcher_icons:main -f flutter_launcher_icons-client2.yaml
+
+flutter_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/images/logo-client2.png"

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:milkman_interview/app_config.dart';
 import 'package:milkman_interview/controllers/theme_controller.dart';
 import 'package:milkman_interview/screens/splash_screen.dart';
 import 'package:milkman_interview/services/local_storage.dart';
-import 'package:milkman_interview/utils/app_theme.dart';
 import 'package:milkman_interview/utils/globals.dart';
 import 'package:milkman_interview/utils/route_generator.dart';
 import 'package:milkman_interview/widgets/flutter_error_widget.dart';
 import 'package:provider/provider.dart';
 
-void main() async {
+Future<void> mainCommon() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
@@ -30,16 +30,16 @@ void main() async {
 
   // end
   FlutterNativeSplash.remove();
-  runApp(const _MainApp());
 }
 
-class _MainApp extends StatelessWidget {
-  const _MainApp({
+class MainApp extends StatelessWidget {
+  const MainApp({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final config = AppConfig.of(context);
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ThemeController>(
@@ -47,11 +47,12 @@ class _MainApp extends StatelessWidget {
         ),
       ],
       builder: (context, _) => MaterialApp(
+        title: config.appDisplayName,
         debugShowCheckedModeBanner: false,
         builder: _appBuilder,
         scrollBehavior: const _DefaultScrollBehavior(),
-        theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.darkTheme,
+        theme: config.theme,
+        darkTheme: config.theme,
         themeMode: ThemeController.of(context).themeMode,
         navigatorKey: Globals.navigatorKey,
         scaffoldMessengerKey: Globals.scaffoldMessengerKey,
