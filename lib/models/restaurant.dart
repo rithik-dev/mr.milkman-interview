@@ -10,9 +10,6 @@ class Restaurant {
   final String discount;
   final String proDiscount;
 
-// discount?
-// price for one?
-
   const Restaurant({
     required this.id,
     required this.name,

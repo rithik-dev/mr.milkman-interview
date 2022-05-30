@@ -1,13 +1,20 @@
 import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 import 'package:flutter/material.dart';
-import 'package:milkman_interview/widgets/theme_list_tile.dart';
+import 'package:milkman_interview/screens/dining_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   static const id = 'HomeScreen';
 
   const HomeScreen({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIdx = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +24,38 @@ class HomeScreen extends StatelessWidget {
           snackBar: const SnackBar(
             content: Text('Tap the back button again to exit the app!'),
           ),
-          child: ListView(
+          child: IndexedStack(
+            index: _selectedIdx,
             children: const [
-              ThemeListTile(),
+              DiningScreen(),
             ],
           ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          onTap: (idx) => setState(() => _selectedIdx = idx),
+          currentIndex: _selectedIdx,
+          items: const [
+            BottomNavigationBarItem(
+              label: 'Delivery',
+              icon: Icon(Icons.ac_unit),
+            ),
+            BottomNavigationBarItem(
+              label: 'Dining',
+              icon: Icon(Icons.add),
+            ),
+            BottomNavigationBarItem(
+              label: 'ZPL',
+              icon: Icon(Icons.remove),
+            ),
+            BottomNavigationBarItem(
+              label: 'Offers',
+              icon: Icon(Icons.access_alarm_sharp),
+            ),
+            BottomNavigationBarItem(
+              label: 'Money',
+              icon: Icon(Icons.accessibility_new_sharp),
+            ),
+          ],
         ),
       ),
     );
