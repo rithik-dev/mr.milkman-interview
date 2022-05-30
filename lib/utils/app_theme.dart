@@ -103,6 +103,15 @@ class AppTheme {
         //   borderRadius: BorderRadius.circular(20),
         // ),
       ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.grey,
+        selectedIconTheme: IconThemeData(color: accentColor),
+        selectedLabelStyle: TextStyle(color: accentColor),
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        type: BottomNavigationBarType.fixed,
+      ),
       // cupertinoOverrideTheme: CupertinoThemeData(
       //   brightness: brightness,
       //   scaffoldBackgroundColor: scaffoldBackgroundColor,
@@ -118,7 +127,7 @@ class AppTheme {
 
   static final lightTheme = _baseTheme(
     Brightness.light,
-    accentColor: const Color(0xFF0669F8),
+    accentColor: Colors.pink,
     onAccentColor: Colors.white,
     scaffoldBackgroundColor: const Color(0xFFDCDFE2),
   ).copyWith(
