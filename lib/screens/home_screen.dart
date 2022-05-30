@@ -1,6 +1,10 @@
 import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 import 'package:flutter/material.dart';
+import 'package:milkman_interview/screens/delivery_screen.dart';
 import 'package:milkman_interview/screens/dining_screen.dart';
+import 'package:milkman_interview/screens/money_screen.dart';
+import 'package:milkman_interview/screens/offers_screen.dart';
+import 'package:milkman_interview/screens/zpl_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const id = 'HomeScreen';
@@ -28,6 +32,10 @@ class _HomeScreenState extends State<HomeScreen> {
             index: _selectedIdx,
             children: const [
               DiningScreen(),
+              DeliveryScreen(),
+              ZplScreen(),
+              OffersScreen(),
+              MoneyScreen(),
             ],
           ),
         ),

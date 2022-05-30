@@ -41,7 +41,6 @@ class _RecommendedForYou extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(AppConfig.of(context).appDisplayName),
             const Text(
               'Recommended for you',
               style: TextStyle(
