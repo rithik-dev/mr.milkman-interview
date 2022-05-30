@@ -36,11 +36,11 @@ class _HomeScreenState extends State<HomeScreen> {
           currentIndex: _selectedIdx,
           items: const [
             BottomNavigationBarItem(
-              label: 'Delivery',
+              label: 'Dining',
               icon: Icon(Icons.ac_unit),
             ),
             BottomNavigationBarItem(
-              label: 'Dining',
+              label: 'Delivery',
               icon: Icon(Icons.add),
             ),
             BottomNavigationBarItem(
